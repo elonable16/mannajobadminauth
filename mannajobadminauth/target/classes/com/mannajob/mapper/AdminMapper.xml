@@ -19,9 +19,9 @@
 
 	<!-- 회원 검색&페이징 -->
 	<select id="getMemListWithPaging" resultMap="MemberVO">
-		select rn, m_id, m_cdate, m_stop, m_del from 
+		select rn, e_num, m_id, m_cdate, m_stop, m_del from 
 		(select /*+ index_desc(empl pk_e) */
-		rownum rn, m.m_id, m.m_cdate, m.m_stop, m.m_del from member m LEFT JOIN empl e 
+		rownum rn, e.e_num, m.m_id, m.m_cdate, m.m_stop, m.m_del from member m LEFT JOIN empl e 
 		ON m.m_id = e.m_id WHERE
 		<choose>
 			<when test="'All'.equals(search.searchType)">

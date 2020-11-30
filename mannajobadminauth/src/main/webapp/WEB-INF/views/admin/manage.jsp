@@ -118,7 +118,7 @@
                             </p>
                           </td>
                           
-                          <td>
+                          <td>::${mem.e_num}::
                             <!-- 아이디 -->
                             <c:choose>
                             	<c:when test="${mem.e_num != null && mem.e_num != 0}">
